@@ -12,9 +12,10 @@ class NavigationBarDefault extends StatefulWidget {
   State<StatefulWidget> createState() => NavigationBarDefaultState();
 }
 
+const englishDropDown = DropdownMenuItem(value: 'en', child: Text('English'));
+const frenchDropDown = DropdownMenuItem(value: 'fr', child: Text('Français'));
+
 List<DropdownMenuItem> createLocaleList(String locale) {
-  const englishDropDown = DropdownMenuItem(value: 'en', child: Text('English'));
-  const frenchDropDown = DropdownMenuItem(value: 'fr', child: Text('Français'));
   var localeList = locale == 'en'
       ? [englishDropDown, frenchDropDown]
       : [frenchDropDown, englishDropDown];
@@ -22,12 +23,10 @@ List<DropdownMenuItem> createLocaleList(String locale) {
 }
 
 class NavigationBarDefaultState extends State<NavigationBarDefault> {
-  late String locale;
-
   @override
   Widget build(BuildContext context) {
-    locale = Localizations.localeOf(context).languageCode;
-    final localeList = createLocaleList(locale);
+    final locale = MyApp.of(context).getLocale(context);
+    final localeList = [englishDropDown, frenchDropDown];
     return SizedBox(
       height: 50.0,
       child: Row(
@@ -50,13 +49,9 @@ class NavigationBarDefaultState extends State<NavigationBarDefault> {
             padding: const EdgeInsets.only(right: 30.0),
             child: DropdownButton(
               items: localeList,
-              value: locale,
+              value: locale.languageCode,
               onChanged: (value) {
-                setState(() {
-                  locale = value.toString();
-                  MyApp.of(context)
-                      .setLocale(Locale.fromSubtags(languageCode: locale));
-                });
+                MyApp.of(context).locale = Locale(value.toString());
               },
             ),
           )
@@ -95,8 +90,7 @@ class NavigationBarDrawer extends StatelessWidget {
                   items: createLocaleList(Localizations.localeOf(context).languageCode),
                   value: Localizations.localeOf(context).languageCode,
                   onChanged: (value) {
-                    MyApp.of(context)
-                        .setLocale(Locale.fromSubtags(languageCode: value.toString()));
+                    MyApp.of(context).locale = Locale.fromSubtags(languageCode: value.toString());
                   },
                 )
               )

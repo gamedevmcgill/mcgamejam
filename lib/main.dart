@@ -18,10 +18,18 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   Locale? _locale;
 
-  void setLocale(Locale locale) {
+  set locale(Locale value) {
+    if (_locale == value) {
+      return;
+    }
     setState(() {
-      _locale = locale;
+      _locale = value;
     });
+  }
+
+  Locale getLocale(BuildContext context) {
+    _locale ??= Localizations.localeOf(context);
+    return _locale!;
   }
 
   @override
