@@ -26,7 +26,7 @@ class NavigationBarDefaultState extends State<NavigationBarDefault> {
   @override
   Widget build(BuildContext context) {
     final locale = MyApp.of(context).getLocale(context);
-    final localeList = [englishDropDown, frenchDropDown];
+    final localeList = createLocaleList(locale.languageCode);
     return SizedBox(
       height: 50.0,
       child: Row(
