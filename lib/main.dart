@@ -3,6 +3,7 @@ import 'package:mcgamejam_website/components/main_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:html';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -36,7 +37,12 @@ class MyAppState extends State<MyApp> {
 
     String? settingsLocaleString = SettingsRepository().getValue('locale');
     if (settingsLocaleString == null) {
-      final newLocale = Localizations.localeOf(context);
+      Locale newLocale;
+      try {
+        newLocale = Localizations.localeOf(context);
+      } catch (e) {
+        newLocale = const Locale('en');
+      }
       SettingsRepository().setValue('locale', newLocale.languageCode);
       _locale = newLocale;
     } else {
