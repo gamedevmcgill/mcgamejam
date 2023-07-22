@@ -1,4 +1,9 @@
 {
     "aboutTitle": "ABOUT",
-    "signUpTitle": "SIGN UP"
+    "signUpTitle": "SIGN UP",
+    "whatIsMcGameJam": "WHAT IS MCGAMEJAM?",
+    "mcGameJamDescription": "McGameJam is a 48 hour game development marathon where attendees are tasked with creating a playable game, in any shape or form, based on a chosen thematic. Organized by Game Dev McGill, McGameJam's goal is to bring students together to collaborate and create great games, regardless of their skill level. So whether you are a veteran game developer or a first-time jammer, join us for a weekend of game development, learning, and fun.",
+    "faq": "FAQ",
+    "whenAndWhere": "When and where is it?",
+    "timeAndLocation": "McGameJam 2024 will be happening between Friday January 19th and Sunday January 21st, in the Trottier building on McGill campus (3630 Rue University, Montreal, QC H3A 0C6)."
 }
