@@ -63,7 +63,11 @@ class MyAppState extends State<MyApp> {
         Locale('en'),
         Locale('fr'),
       ],
-      theme: ThemeData(colorSchemeSeed: const Color(0xff6750a4), useMaterial3: true),
+      theme: ThemeData(
+          colorSchemeSeed: const Color(0xff6750a4),
+          scaffoldBackgroundColor: const Color(0xfff9f7fd),
+          shadowColor: const Color(0xff261d3b),
+          useMaterial3: true),
       home: const MainPage(),
       locale: getLocale(context)
     );

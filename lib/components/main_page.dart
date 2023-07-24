@@ -12,20 +12,29 @@ class MainContent extends StatelessWidget {
     return SelectableRegion(
         focusNode: FocusNode(),
         selectionControls: materialTextSelectionControls,
-        child: PreferredSize(
-          preferredSize: const Size.fromWidth(500.0),
-          child: Column(
-              children: const [
-                AboutSection(),
-                FaqSection()
-              ])
+        child: Center(
+          child: Container(
+              constraints: const BoxConstraints(maxWidth: 1000),
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                  children: const [
+                    AboutSection(),
+                    FaqSection()
+                  ])
+          )
         )
     );
   }
 }
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => MainPageState();
+}
+
+class MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -33,21 +42,29 @@ class MainPage extends StatelessWidget {
         preferredSize: const Size(1920, 1080),
         child: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-          final isNarrow = constraints.maxWidth < 1000;
-          if (isNarrow) {
-            return Scaffold(
-                appBar: AppBar(
-                  title: const McGameJamTitle(),
-                ),
-                drawer: const NavigationBarDrawer(),
-                body: const MainContent());
-          } else {
-            return const Scaffold(
-                appBar: PreferredSize(
-                    preferredSize: Size(1000, 500),
-                    child: NavigationBarDefault()),
-                body: MainContent());
-          }
-        }));
+              final isNarrow = constraints.maxWidth < 1000;
+              if (isNarrow) {
+                // mobile
+                return Scaffold(
+                    appBar: AppBar(
+                      title: const McGameJamTitle(),
+                    ),
+                    bottomNavigationBar: const NewNavBar(),
+                    body: const MainContent());
+              } else {
+                // desktop
+                return Scaffold(
+                    appBar: AppBar(
+                      title: const McGameJamTitle(),
+                    ),
+                    body: Row(
+                      children: [
+                        NewNavRail(),
+                        const Expanded(child: MainContent())
+                      ],
+                    ));
+              }
+            }));
   }
+
 }
