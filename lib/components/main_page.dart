@@ -32,9 +32,20 @@ class MainPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => MainPageState();
+
+  static MainPageState of(BuildContext context) => context.findAncestorStateOfType<MainPageState>()!;
 }
 
 class MainPageState extends State<MainPage> {
+  int _selectedIndex = 0;
+
+  set selectedIndex(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  int get selectedIndex => _selectedIndex;
 
   @override
   Widget build(BuildContext context) {
