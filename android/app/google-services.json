@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "601686189968",
+    "project_id": "mcgamejam-temporary",
+    "storage_bucket": "mcgamejam-temporary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601686189968:android:e087ad002c86740691f515",
+        "android_client_info": {
+          "package_name": "com.example.mcgamejam_website"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601686189968-hdk0g85hlatspp8ipfhgsp1bboum7e0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjAKFlduek_OC62CHg12wBfzPwG2XvKHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601686189968-hdk0g85hlatspp8ipfhgsp1bboum7e0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
