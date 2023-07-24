@@ -17,11 +17,11 @@ class NewNavBarState extends State<NewNavBar> {
     return NavigationBar(
       selectedIndex: MainPage.of(context).selectedIndex,
       destinations: [
-        NavigationDestination(icon: Icon(Icons.home_outlined), label: AppLocalizations.of(context)!.homeTitle),
-        NavigationDestination(icon: Icon(Icons.info_outline_rounded), label: AppLocalizations.of(context)!.aboutTitle),
-        NavigationDestination(icon: Icon(Icons.question_answer_outlined), label: "FAQ"),
-        NavigationDestination(icon: Icon(Icons.app_registration_rounded), label: AppLocalizations.of(context)!.signUpTitle),
-        NavigationDestination(icon: Icon(Icons.language_rounded), label: AppLocalizations.of(context)!.langToggle),
+        NavigationDestination(icon: const Icon(Icons.home_outlined), label: AppLocalizations.of(context)!.homeTitle),
+        NavigationDestination(icon: const Icon(Icons.info_outline_rounded), label: AppLocalizations.of(context)!.aboutTitle),
+        const NavigationDestination(icon: Icon(Icons.question_answer_outlined), label: "FAQ"),
+        NavigationDestination(icon: const Icon(Icons.app_registration_rounded), label: AppLocalizations.of(context)!.signUpTitle),
+        NavigationDestination(icon: const Icon(Icons.language_rounded), label: AppLocalizations.of(context)!.langToggle),
       ],
       onDestinationSelected: (index) {
         switch (index) {
@@ -48,11 +48,11 @@ class NewNavRail extends StatelessWidget {
       selectedIndex: MainPage.of(context).selectedIndex,
       extended: true,
       destinations: [
-        NavigationRailDestination(icon: Icon(Icons.home_outlined), label: Text(AppLocalizations.of(context)!.homeTitle)),
-        NavigationRailDestination(icon: Icon(Icons.info_outline_rounded), label: Text(AppLocalizations.of(context)!.aboutTitle)),
-        NavigationRailDestination(icon: Icon(Icons.question_answer_outlined), label: Text("FAQ")),
-        NavigationRailDestination(icon: Icon(Icons.app_registration_rounded), label: Text(AppLocalizations.of(context)!.signUpTitle)),
-        NavigationRailDestination(icon: Icon(Icons.language_rounded), label: Text(AppLocalizations.of(context)!.langToggle)),
+        NavigationRailDestination(icon: const Icon(Icons.home_outlined), label: Text(AppLocalizations.of(context)!.homeTitle)),
+        NavigationRailDestination(icon: const Icon(Icons.info_outline_rounded), label: Text(AppLocalizations.of(context)!.aboutTitle)),
+        const NavigationRailDestination(icon: Icon(Icons.question_answer_outlined), label: Text("FAQ")),
+        NavigationRailDestination(icon: const Icon(Icons.app_registration_rounded), label: Text(AppLocalizations.of(context)!.signUpTitle)),
+        NavigationRailDestination(icon: const Icon(Icons.language_rounded), label: Text(AppLocalizations.of(context)!.langToggle)),
       ],
       onDestinationSelected: (index) {
         switch (index) {
