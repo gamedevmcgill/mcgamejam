@@ -5,7 +5,9 @@ import 'package:mcgamejam_website/components/sections/faq_section.dart';
 import 'package:mcgamejam_website/components/stylized_components.dart';
 
 class MainContent extends StatelessWidget {
-  const MainContent({Key? key}) : super(key: key);
+  final int pageIndex;
+
+  const MainContent({Key? key, required this.pageIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +18,16 @@ class MainContent extends StatelessWidget {
           child: Container(
               constraints: const BoxConstraints(maxWidth: 1000),
               padding: const EdgeInsets.all(30),
-              child: Column(
-                  children: const [
-                    AboutSection(),
-                    FaqSection()
-                  ])
+              child: (pageIndex) {
+                switch (pageIndex) {
+                  case 1:
+                    return const AboutSection();
+                  case 2:
+                    return const FaqSection();
+                  default:
+                    return const Text("Not implemented");
+                }
+              }(pageIndex)
           )
         )
     );
@@ -49,33 +56,33 @@ class MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-        preferredSize: const Size(1920, 1080),
-        child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              final isNarrow = constraints.maxWidth < 1000;
-              if (isNarrow) {
-                // mobile
-                return Scaffold(
-                    appBar: AppBar(
-                      title: const McGameJamTitle(),
-                    ),
-                    bottomNavigationBar: const NewNavBar(),
-                    body: const MainContent());
-              } else {
-                // desktop
-                return Scaffold(
-                    appBar: AppBar(
-                      title: const McGameJamTitle(),
-                    ),
-                    body: Row(
-                      children: [
-                        NewNavRail(),
-                        const Expanded(child: MainContent())
-                      ],
-                    ));
-              }
-            }));
+    return SafeArea(
+      child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            final isNarrow = constraints.maxWidth < 1000;
+            if (isNarrow) {
+              // mobile
+              return Scaffold(
+                  appBar: AppBar(
+                    title: const McGameJamTitle(),
+                  ),
+                  bottomNavigationBar: const NewNavBar(),
+                  body: MainContent(pageIndex: selectedIndex));
+            } else {
+              // desktop
+              return Scaffold(
+                  appBar: AppBar(
+                    title: const McGameJamTitle(),
+                  ),
+                  body: Row(
+                    children: [
+                      const NewNavRail(),
+                      Expanded(child: MainContent(pageIndex: selectedIndex,))
+                    ],
+                  ));
+            }
+          })
+    );
   }
 
 }

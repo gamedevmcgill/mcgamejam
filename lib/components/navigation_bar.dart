@@ -39,9 +39,14 @@ class NewNavBarState extends State<NewNavBar> {
   }
 }
 
-class NewNavRail extends StatelessWidget {
+class NewNavRail extends StatefulWidget {
   const NewNavRail({super.key});
 
+  @override
+  State<StatefulWidget> createState() => NewNavRailState();
+}
+
+class NewNavRailState extends State<NewNavRail> {
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
@@ -60,11 +65,12 @@ class NewNavRail extends StatelessWidget {
             MyApp.of(context).locale = Locale.fromSubtags(languageCode: Localizations.localeOf(context).languageCode == 'en' ? 'fr' : 'en');
             break;
           default:
-            MainPage.of(context).selectedIndex = index;
+            setState(() {
+              MainPage.of(context).selectedIndex = index;
+            });
             break;
         }
       },
     );
   }
-  
 }
