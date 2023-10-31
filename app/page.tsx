@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import FloatingNav from "@/app/_components/FloatingNav";
+import {FloatingNavCover} from "@/app/_components/FloatingNav";
 //import banner from "/Banner_Unbranded_2024.png";
 
 
@@ -16,14 +16,14 @@ import FloatingNav from "@/app/_components/FloatingNav";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col lg:justify-center w-screen h-screen">
+		<div className="flex flex-col gt-lg:justify-center w-screen h-screen">
 			<Image src={"/Banner_Unbranded_2024.png"} alt={"McGameJam 2024"}
 				   width="0"
 				   height="0"
 				   sizes="100vw"
 				   className="w-full h-auto"/>
 
-			<FloatingNav isExpanded={false}/>
+			<FloatingNavCover />
 		</div>
 	);
 }

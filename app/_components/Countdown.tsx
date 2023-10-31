@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useEffect, useState} from "react";
 
 const Countdown = () => {
@@ -49,8 +51,8 @@ const Countdown = () => {
                     <span>S</span>
                 </div>
             </div>
-            <div className="flex items-center space-x-4 text-md font-medium justify-center pr-6">
-                <span className="whitespace-nowrap">until the game jam</span>
+            <div className="flex items-center ml-4 text-md font-medium justify-center pr-6">
+                <span className="whitespace-nowrap">until the jam</span>
             </div>
         </>
     )
