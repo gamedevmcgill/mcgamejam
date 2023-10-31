@@ -1,6 +1,8 @@
 import "../global.css";
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
+import Image from "next/image";
+import {px} from "framer-motion";
 
 // export const metadata: Metadata = {
 // 	title: {
@@ -63,11 +65,18 @@ export default function RootLayout({
 			<body
 				className={`${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-				}`} style={{
-					backgroundColor: "rgb(190, 180, 169)",
-			}}
+				}`}
 			>
-				{children}
+				<div style={
+					{
+						backgroundImage: "url(/cork.png)",
+						backgroundRepeat: "repeat",
+						backgroundSize: "150px 150px",
+					}
+				}>
+
+					{children}
+				</div>
 			</body>
 		</html>
 	);
