@@ -72,6 +72,7 @@ module.exports = {
 				"fade-right": "fade-right 3s ease-in-out forwards",
 				pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				shadowPulse: 'shadowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				swing: 'swing 2s infinite',
 			},
 			keyframes: {
 				"fade-in": {
@@ -144,6 +145,14 @@ module.exports = {
 					'30%': { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' },
 					'55%': { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.09)' },
 					'60%': { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' },
+				},
+				swing: {
+					'0%': { transform: 'rotate(0deg)' },
+					'20%': { transform: 'rotate(10deg)' },
+					'40%': { transform: 'rotate(-10deg)' },
+					'60%': { transform: 'rotate(7deg)' },
+					'80%': { transform: 'rotate(-7deg)' },
+					'100%': { transform: 'rotate(0deg)' },
 				},
 			},
 		},

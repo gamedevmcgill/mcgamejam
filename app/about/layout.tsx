@@ -1,6 +1,6 @@
 import "@/global.css";
 import React from "react";
-
+import { alegreyaFont } from "@/app/_components/constants";
 
 export default function RootLayout({
                                        children,
@@ -11,7 +11,7 @@ export default function RootLayout({
         <div style={{
             backgroundImage: "none !important",
             backgroundColor: "#ffecde",
-        }}>
+        }} className={alegreyaFont.className}>
             {children}
         </div>
     );

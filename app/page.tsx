@@ -1,9 +1,8 @@
-'use client';
-
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import {FloatingNavCover} from "@/app/_components/FloatingNav";
+
+import {FloatingNavCover} from "@/app/_components/FloatingNavCover";
 //import banner from "/Banner_Unbranded_2024.png";
 
 
