@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import React from "react";
-import Particles from "./components/particles";
 import Image from "next/image";
-import banner from "../public/Banner_Unbranded_2024.png";
+//import banner from "/Banner_Unbranded_2024.png";
 import { useState, useEffect } from 'react';
 
 const navigation = [
@@ -97,7 +96,11 @@ const Nav = (props: any) => {
 export default function Home() {
 	return (
 		<div className="flex flex-col lg:justify-center w-screen h-screen">
-			<Image src={banner} alt={"McGameJam 2024"}/>
+			<Image src={"/Banner_Unbranded_2024.png"} alt={"McGameJam 2024"}
+				   width="0"
+				   height="0"
+				   sizes="100vw"
+				   className="w-full h-auto"/>
 
 			<Nav isExpanded={false}/>
 		</div>
