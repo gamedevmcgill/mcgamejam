@@ -20,6 +20,9 @@ dependencies:
   '@next/font':
     specifier: ^13.5.4
     version: 13.5.4
+  '@types/negotiator':
+    specifier: ^0.6.2
+    version: 0.6.2
   '@upstash/redis':
     specifier: ^1.23.3
     version: 1.23.3
@@ -381,6 +384,10 @@ packages:
 
   /@types/ms@0.7.32:
     resolution: {integrity: sha512-xPSg0jm4mqgEkNhowKgZFBNtwoEwF6gJ4Dhww+GFpm3IgtNseHQZ5IqdNwnquZEoANxyDAKDRAdVo4Z72VvD/g==}
+    dev: false
+
+  /@types/negotiator@0.6.2:
+    resolution: {integrity: sha512-VDLot2SCTUA8snP/tY9piNotcRhxnv/ujim+9Ec6NfoSS2+AZ8CoUaLmKokTaQJ1Tw7qsPcVQApfDogh3SclnQ==}
     dev: false
 
   /@types/node@20.8.4:

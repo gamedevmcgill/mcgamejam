@@ -5,8 +5,10 @@ import Script from "next/script";
 
 export default function RootLayout({
 	children,
+	params
 }: {
 	children: React.ReactNode;
+	params: any;
 }) {
 	return (
 		<html lang="en" className={[interFont.variable].join(" ")}>
