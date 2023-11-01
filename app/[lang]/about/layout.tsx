@@ -1,6 +1,6 @@
 import "@/global.css";
 import React from "react";
-import { alegreyaFont } from "@/app/_components/constants";
+import { alegreyaFont } from "@/app/[lang]/_components/constants";
 
 export default function RootLayout({
                                        children,

@@ -24,7 +24,7 @@ const interFont = Inter({
 
 const chomskyFont = LocalFont(
     {
-        src: "../../public/fonts/chomsky/Chomsky.otf",
+        src: "../../../public/fonts/chomsky/Chomsky.otf",
     },
 );
 

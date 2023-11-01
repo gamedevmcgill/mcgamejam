@@ -1,6 +1,6 @@
-import "../global.css";
+import "../../global.css";
 import React from "react";
-import { interFont } from "@/app/_components/constants";
+import { interFont } from "@/app/[lang]/_components/constants";
 import Script from "next/script";
 
 export default function RootLayout({

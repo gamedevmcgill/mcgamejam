@@ -1,4 +1,4 @@
-import {chomskyFont} from "@/app/_components/constants";
+import {chomskyFont} from "@/app/[lang]/_components/constants";
 
 const TopNavBar = () => {
     return (

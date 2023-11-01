@@ -1,9 +1,9 @@
 'use client'
 
-import { FloatingNavContent } from "@/app/_components/FloatingNavContent";
-import {interFont, ticketUrl} from "@/app/_components/constants";
-import { alegreyaFont, cinzelFont } from "@/app/_components/constants";
-import TopNavBar from "@/app/_components/TopNavBar";
+import { FloatingNavContent } from "@/app/[lang]/_components/FloatingNavContent";
+import {interFont, ticketUrl} from "@/app/[lang]/_components/constants";
+import { alegreyaFont, cinzelFont } from "@/app/[lang]/_components/constants";
+import TopNavBar from "@/app/[lang]/_components/TopNavBar";
 
 const Home = () => {
     return (

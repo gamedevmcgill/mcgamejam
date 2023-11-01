@@ -1,7 +1,7 @@
 'use client'
 
-import Countdown from "@/app/_components/Countdown";
-import {ticketUrl} from "@/app/_components/constants";
+import Countdown from "@/app/[lang]/_components/Countdown";
+import {ticketUrl} from "@/app/[lang]/_components/constants";
 
 const FloatingNavContent = () => {
     return (

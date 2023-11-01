@@ -4,9 +4,9 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-import {FloatingNavCover} from "@/app/_components/FloatingNavCover";
+import {FloatingNavCover} from "@/app/[lang]/_components/FloatingNavCover";
 import {useSearchParams} from 'next/navigation';
-import {Language} from "@/app/_components/constants";
+import {Language} from "@/app/[lang]/_components/constants";
 
 export default function Home() {
 	const params = useSearchParams();

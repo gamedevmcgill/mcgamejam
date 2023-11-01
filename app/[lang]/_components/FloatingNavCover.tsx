@@ -1,4 +1,4 @@
-import {LanguageProps, ticketUrl} from "@/app/_components/constants";
+import {LanguageProps, ticketUrl} from "@/app/[lang]/_components/constants";
 
 const FloatingNavCover = (props: any) => {
     const langProps = props as LanguageProps;
