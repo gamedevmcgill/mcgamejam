@@ -10,6 +10,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 	params: any;
 }) {
+	console.log(params);
 	return (
 		<html lang="en" className={[interFont.variable].join(" ")}>
 			<body
