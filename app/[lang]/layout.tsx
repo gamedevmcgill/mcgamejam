@@ -8,11 +8,10 @@ export default function RootLayout({
 	params
 }: {
 	children: React.ReactNode;
-	params: any;
+	params: { lang: string }
 }) {
-	console.log(params);
 	return (
-		<html lang="en" className={[interFont.variable].join(" ")}>
+		<html lang={params.lang} className={[interFont.variable].join(" ")}>
 			<body
 				className={`${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined

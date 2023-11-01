@@ -1,11 +1,12 @@
 'use client'
 
 import { FloatingNavContent } from "@/app/[lang]/_components/FloatingNavContent";
-import {interFont, ticketUrl} from "@/app/[lang]/_components/constants";
+import {interFont, Language, ticketUrl} from "@/app/[lang]/_components/constants";
 import { alegreyaFont, cinzelFont } from "@/app/[lang]/_components/constants";
 import TopNavBar from "@/app/[lang]/_components/TopNavBar";
 
-const Home = () => {
+const Home = ({params} : {params: { lang: Language}}) => {
+    const lang = params.lang;
     return (
         <>
             <TopNavBar />
