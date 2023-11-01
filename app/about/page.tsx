@@ -64,14 +64,14 @@ const Home = () => {
                     </ul>
 
                     <div className="flex items-center justify-center">
-                        <button className="relative bg-amber-600 p-4 rounded-lg shadow-lg hover:bg-amber-700" onClick={() => window.location.href = ticketUrl}>
+                        <a className="relative bg-amber-600 p-4 rounded-lg shadow-lg hover:bg-amber-700" href={ticketUrl}>
                             <div className="absolute top-0 right-0 bg-red-500 text-xs text-white py-0.5 px-2 transform translate-x-1/2 -translate-y-1/2 rounded-md">
                                 Early birds 25% off
                             </div>
                             <h1 className="text-xl font-bold text-center text-white">
                                 Get your tickets
                             </h1>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

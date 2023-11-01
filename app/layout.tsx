@@ -1,6 +1,7 @@
 import "../global.css";
 import React from "react";
 import { interFont } from "@/app/_components/constants";
+import Script from "next/script";
 
 export default function RootLayout({
 	children,
@@ -14,6 +15,10 @@ export default function RootLayout({
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>
+			<Script
+				src="https://polyfill.io/v3/polyfill.min.js"
+				strategy="beforeInteractive"
+			/>
 				<div style={
 					{
 						backgroundImage: "url(/cork.png)",
