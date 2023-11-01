@@ -22,6 +22,11 @@ const interFont = Inter({
     variable: "--font-inter",
 });
 
+export type Language = "en" | "fr";
+
+export interface LanguageProps {
+    language: Language;
+}
 
 export {
     ticketUrl,

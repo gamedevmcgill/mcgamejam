@@ -1,19 +1,30 @@
+'use client';
+
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
 import {FloatingNavCover} from "@/app/_components/FloatingNavCover";
-//import banner from "/Banner_Unbranded_2024.png";
-
-
-// const navigation = [
-// 	{ name: "Projects", href: "/projects" },
-// 	{ name: "Contact", href: "/contact" },
-// ];
-
-
+import {useSearchParams} from 'next/navigation';
+import {Language} from "@/app/_components/constants";
 
 export default function Home() {
+	const params = useSearchParams();
+	// print
+	const langString = params.get("lang");
+	let lang: Language = "en";
+	if (langString)
+	{
+		switch (langString) {
+			case "en": case "fr":
+				lang = langString;
+				break;
+			default:
+				lang = "en";
+				break;
+		}
+	}
+
 	return (
 		<div className="flex flex-col gt-lg:justify-center w-screen h-screen">
 			<Image src={"/Banner_Unbranded_2024.png"} alt={"McGameJam 2024"}
@@ -22,7 +33,7 @@ export default function Home() {
 				   sizes="100vw"
 				   className="w-full h-auto"/>
 
-			<FloatingNavCover />
+			<FloatingNavCover language={lang}/>
 		</div>
 	);
 }
