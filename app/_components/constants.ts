@@ -22,6 +22,12 @@ const interFont = Inter({
     variable: "--font-inter",
 });
 
+const chomskyFont = LocalFont(
+    {
+        src: "../../public/fonts/chomsky/Chomsky.otf",
+    },
+);
+
 export type Language = "en" | "fr";
 
 export interface LanguageProps {
@@ -33,4 +39,5 @@ export {
     cinzelFont,
     alegreyaFont,
     interFont,
+    chomskyFont
 };
