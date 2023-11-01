@@ -1,13 +1,13 @@
 'use client';
 
-import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
 import {FloatingNavCover} from "@/app/[lang]/_components/FloatingNavCover";
 import {Language} from "@/app/[lang]/_components/constants";
+import { getDictionary } from '@/lib/dictionary'
 
-export default function Home({
+export default async function Home({
 								 params
 							 }: {	params: { lang: Language }
 							 }) {
