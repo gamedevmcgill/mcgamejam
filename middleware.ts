@@ -29,6 +29,15 @@ export function middleware(request: NextRequest) {
 
     console.log("request.url ", request.url);
 
+    if (request.nextUrl.pathname.endsWith("/fr/") || request.nextUrl.pathname.endsWith("/fr")) {
+        return NextResponse.redirect(
+            new URL(
+                `/fr-FR`,
+                request.url
+            )
+        )
+    }
+
     // console.log("pathnameIsMissingLocale ", pathnameIsMissingLocale);
     // console.log("pathname ", pathname);
 
