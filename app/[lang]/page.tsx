@@ -10,6 +10,9 @@ export default function Home({
 								 params
 							 }: {	params: { lang: Language }
 							 }) {
+	if (params.lang !== 'en' && params.lang !== 'fr') {
+		params.lang = 'en';
+	}
 	return (
 		<div className="flex flex-col gt-lg:justify-center w-screen h-screen">
 			<Image src={"/Banner_Unbranded_2024.png"} alt={"McGameJam 2024"}

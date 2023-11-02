@@ -18,7 +18,7 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
-    console.log("request.url ", request.url);
+    //console.log("request.url ", request.url);
     const pathname = new URL(request.url).pathname ? new URL(request.url).pathname : `/${new URL(request.url).pathname}`;
     // check if the pathname is a resource file
     const isResourceFile = pathname.match(/\.[0-9a-z]+$/i)
@@ -27,22 +27,36 @@ export function middleware(request: NextRequest) {
         locale => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
     )
 
-    console.log("pathnameIsMissingLocale ", pathnameIsMissingLocale);
-    console.log("pathname ", pathname);
+    // console.log("request.url ", request);
+
+    // console.log("pathnameIsMissingLocale ", pathnameIsMissingLocale);
+    // console.log("pathname ", pathname);
 
     // Redirect if there is no locale
     if (pathnameIsMissingLocale) {
-        const locale = getLocale(request)
-        return NextResponse.redirect(
-            new URL(
-                `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-                request.url
+        const locale = getLocale(request);
+        if (locale === 'fr') {
+            console.log("redirecting " + pathname + " to " + `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`);
+            return NextResponse.redirect(
+                new URL(
+                    `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+                    request.url
+                )
             )
-        )
+        } else {
+            //console.log("rewriting " + pathname + " to " + `/en${pathname.startsWith('/') ? '' : '/'}${pathname}`);
+            return NextResponse.redirect(
+                new URL(
+                    `/fr${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+                    request.url
+                )
+            )
+        }
     }
 }
 
 export const config = {
-    // Matcher ignoring `/_next/` and `/api/`
-    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
+    matcher: [
+        '/:path*'
+    ]
 }
