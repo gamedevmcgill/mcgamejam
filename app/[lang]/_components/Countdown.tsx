@@ -1,8 +1,19 @@
 'use client'
 
 import React, {useEffect, useState} from "react";
+import {Language} from "@/app/[lang]/_components/constants";
+import {getDictionary} from "@/app/[lang]/_lib/dictionary";
 
-const Countdown = () => {
+const Countdown = ({ params } : { params: { lang: Language }}) => {
+    const lang = params.lang;
+    const {
+        root: {
+            misc: {
+                day_abbrev,
+                until_the_jam
+            }
+        }
+    } = getDictionary(lang);
     const formatWithLeadingZero = (value: any) => (value < 10 ? `0${value}` : value);
     const [timeLeft, setTimeLeft] = useState({
         months: 0,
@@ -43,7 +54,7 @@ const Countdown = () => {
         <>
             <div className="flex items-center space-x-2 text-lg font-medium w-72">
                 <div><span className="text-2xl pr-2">{timeLeft.months}</span><span>M</span></div>
-                <div><span className="text-2xl pr-2">{formatWithLeadingZero(timeLeft.days)}</span><span>D</span></div>
+                <div><span className="text-2xl pr-2">{formatWithLeadingZero(timeLeft.days)}</span><span>{day_abbrev}</span></div>
                 <div><span className="text-2xl pr-2">{formatWithLeadingZero(timeLeft.hours)}</span><span>H</span></div>
                 <div><span className="text-2xl pr-2">{formatWithLeadingZero(timeLeft.minutes)}</span><span>MIN</span></div>
                 <div className="flex items-baseline">
@@ -52,7 +63,7 @@ const Countdown = () => {
                 </div>
             </div>
             <div className="flex items-center ml-4 text-md font-medium justify-center pr-6">
-                <span className="whitespace-nowrap">until the jam</span>
+                <span className="whitespace-nowrap">{until_the_jam}</span>
             </div>
         </>
     )

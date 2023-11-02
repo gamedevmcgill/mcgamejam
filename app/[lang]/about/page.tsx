@@ -6,8 +6,45 @@ import { alegreyaFont, cinzelFont } from "@/app/[lang]/_components/constants";
 import TopNavBar from "@/app/[lang]/_components/TopNavBar";
 import LanguageSwitchButton from "@/app/[lang]/_components/LanguageSwitchButton";
 import React from "react";
+import {getDictionary} from "@/app/[lang]/_lib/dictionary";
 
 const Home = ({params} : {params: { lang: Language}}) => {
+    const {
+        root: {
+            about: {
+                content: {
+                    what_is_mcgamejam,
+                    what_is_mcgamejam_response,
+                    when_and_where,
+                    when_and_where_response,
+                    who_can_participate,
+                    who_can_participate_response,
+                    how_should_i_prepare,
+                    how_should_i_prepare_response,
+                    will_there_be_food,
+                    will_there_be_food_response,
+                    what_should_i_bring_with_me,
+                    what_should_i_bring_with_me_response,
+                    what_if_i_dont_have_a_team,
+                    what_if_i_dont_have_a_team_response,
+                    how_big_can_my_team_be,
+                    how_big_can_my_team_be_response,
+                    where_do_i_submit_my_game_for_judging,
+                    where_do_i_submit_my_game_for_judging_response,
+                    tickets,
+                    swag,
+                    ubi_mentorship,
+                    tech_talks,
+                    sponsors,
+                    get_your_tickets,
+                    sign_up,
+                    early_bird_discount_desc,
+                    tickets_desc,
+                    networking
+                }
+            }
+        }
+    } = getDictionary(params.lang);
     return (
         <>
             <TopNavBar />
@@ -16,70 +53,81 @@ const Home = ({params} : {params: { lang: Language}}) => {
                 <div className={"py-11"} />
                 <div className={"grid grid-cols-12 gap-4"}>
                     <div className={"col-start-3 col-span-9 lt-sm:col-start-2 lt-sm:col-span-10 gt-lg:col-start-4 gt-lg:col-span-8 space-y-6"}>
-                        <div className={"text-center text-3xl " + cinzelFont.className}>What is McGameJam?</div>
+                        <div className={"text-center text-3xl " + cinzelFont.className}>
+                            {what_is_mcgamejam}
+                        </div>
                         <div className={"text-md"}>
-                            McGameJam is a 48 hour game development marathon where attendees are tasked with creating a playable game, in any shape or form, based on a chosen thematic. Organized by Game Dev McGill, McGameJam's goal is to bring students together to collaborate and create great games, regardless of their skill level. So whether you are a veteran game developer or a first-time jammer, join us for a weekend of game development, learning, and fun.
+                            {what_is_mcgamejam_response}
                         </div>
                         <br />
                         <div className={"text-center text-3xl " + cinzelFont.className}>F.A.Q.</div>
                         <div className={"text-md"}>
-                            <div className={"text-2xl"}>When and where is it?</div>
-                            McGameJam 2024 will be happening between Friday, January 19th and Sunday, January 21st, in the Trottier building on McGill campus (3630, rue University, Montréal (QC) H3A 0C6)
+                            <div className={"text-2xl"}>
+                                {when_and_where}
+                            </div>
+                            {when_and_where_response}
                             <br />
                             <br />
-                            <div className={"text-2xl"}>Who can participate?</div>
-                            McGameJam is open to all everyone aged 18 or older, with priority given to students. We reserve the right to cancel any tickets which do not respect those conditions.
+                            <div className={"text-2xl"}>
+                                {who_can_participate}
+                            </div>
+                            {who_can_participate_response}
                             <br />
                             <br />
-                            <div className={"text-2xl"}>How should I prepare?</div>
-                            In order to enjoy this competition to the fullest, we recommend you get familiar with programming languages as well as tools such as the following:
+                            <div className={"text-2xl"}>
+                                {how_should_i_prepare}
+                            </div>
+                            {how_should_i_prepare_response}
+                            <div className="text-5xl">
+                                ADD ICONS
+                            </div>
                             <br />
                             <br />
-                            <div className={"text-2xl"}>Will there be food?</div>
-                            As usual, we will be providing meals (breakfast, lunch, supper), starting from supper on Friday during opening ceremonies until lunch on Sunday before the last stretch. Furthermore, we will be serving snacks and coffee throughout the day. Additionally, there are multiple restaurants and supermarkets around if you feel the need to purchase your own food.
+                            <div className={"text-2xl"}>{will_there_be_food}</div>
+                            {will_there_be_food_response}
                             <br />
                             <br />
-                            <div className={"text-2xl"}>What should I bring with me?</div>
-                            Bring whatever you need to make a game, whether that is a computer, a drawing tablet, pens, papers, paint, the list goes on. If you can make a game with it, bring it along! Furthermore, we recommend you bring a toothbrush, deodorant, spare clothing, sleeping bag, etc. if you plan on spending the night with us! Most importantly, please bring your ticket to the event to facilitate badge and t-shirt pickup.
+                            <div className={"text-2xl"}>{what_should_i_bring_with_me}</div>
+                            {what_should_i_bring_with_me_response}
                             <br />
                             <br />
-                            <div className={"text-2xl"}>What if I don't have a team?</div>
-                            You are welcome to use our Facebook event page to try and find other teammates. Otherwise, we will attempt to group up participants who are alone and are looking for teammates. Additionally, we will set up a Discord server to facilitate team building prior to the event.
+                            <div className={"text-2xl"}>{what_if_i_dont_have_a_team}</div>
+                            {what_if_i_dont_have_a_team_response}
                             <br />
                             <br />
-                            <div className={"text-2xl"}>How big can my team be?</div>
-                            Please make sure your team is of at most 8 members! Teams of bigger sizes will be asked to split up.
+                            <div className={"text-2xl"}>{how_big_can_my_team_be}</div>
+                            {how_big_can_my_team_be_response}
                             <br />
                             <br />
-                            <div className={"text-2xl"}>Where do I submit my game for judging?</div>
-                            We will be using Itch.io for the submission process. Detailed instructions will be given at the event.
+                            <div className={"text-2xl"}>{where_do_i_submit_my_game_for_judging}</div>
+                            {where_do_i_submit_my_game_for_judging_response}
                         </div>
-                        <div className={"text-center text-3xl " + cinzelFont.className}>Sign up</div>
-                        <div className="text-center text-lg">Tickets</div>
+                        <div className={"text-center text-3xl " + cinzelFont.className}>{sign_up}</div>
+                        <div className="text-center text-lg">{tickets}</div>
 
-                        To sign up you must purchase a $15-30 ticket. You will need to have registered a ticket to access the Discord server and submit your game on Itch.io for judging. Tickets also provide you with the following:
+                        {tickets_desc}
 
                         <ul className={"list-disc gt-md:list-inside"}>
-                            <li>Ubisoft mentoring throughout the development of your game</li>
-                            <li>Technical talks prior to and during the competition</li>
-                            <li>Networking with sponsors</li>
-                            <li>A swag pack and some additional goodies!</li>
+                            <li>{ubi_mentorship}</li>
+                            <li>{tech_talks}</li>
+                            <li>{networking}</li>
+                            <li>{swag}</li>
                         </ul>
 
                         <div className="flex items-center justify-center">
                             <a className="relative bg-amber-600 p-4 rounded-lg shadow-lg hover:bg-amber-700" href={ticketUrl}>
                                 <div className="absolute top-0 right-0 bg-red-500 text-xs text-white py-0.5 px-2 transform translate-x-1/2 -translate-y-1/2 rounded-md">
-                                    Early birds 25% off
+                                    {early_bird_discount_desc}
                                 </div>
                                 <h1 className="text-xl font-bold text-center text-white">
-                                    Get your tickets
+                                    {get_your_tickets}
                                 </h1>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className={interFont.className}>
-                    <FloatingNavContent/>
+                    <FloatingNavContent params={params}/>
                 </div>
                 <div className="py-16 lt-lg:py-24 lt-md:py-28"/>
             </div>
