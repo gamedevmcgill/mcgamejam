@@ -5,9 +5,8 @@ import Image from "next/image";
 
 import {FloatingNavCover} from "@/app/[lang]/_components/FloatingNavCover";
 import {Language} from "@/app/[lang]/_components/constants";
-import { getDictionary } from '@/lib/dictionary'
 
-export default async function Home({
+export default function Home({
 								 params
 							 }: {	params: { lang: Language }
 							 }) {

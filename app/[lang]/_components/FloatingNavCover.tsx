@@ -1,12 +1,14 @@
 import {Language, LanguageProps, ticketUrl} from "@/app/[lang]/_components/constants";
-import { getDictionary } from "@/lib/dictionary";
+import { getDictionary } from "@/app/[lang]/_lib/dictionary";
 
 const FloatingNavCover = async ({
                             params
                           } : {
     params: { lang: Language }
 }) => {
-    const { root: { content: { learn_more, buy_tickets}}} = await getDictionary(params.lang);
+    const dict = getDictionary(params.lang)!;
+    const learn_more = dict.root.content.learn_more;
+    const buy_tickets = dict.root.content.buy_tickets;
     return (
         <div
             className="fixed bottom-6 left-1/2 transform -translate-x-1/2 p-4 bg-white rounded-xl shadow-lg gt-sm:flex lt-sm:flex-col">

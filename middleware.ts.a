@@ -18,6 +18,7 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
+    console.log("request.url ", request.url);
     const pathname = new URL(request.url).pathname ? new URL(request.url).pathname : `/${new URL(request.url).pathname}`;
     // check if the pathname is a resource file
     const isResourceFile = pathname.match(/\.[0-9a-z]+$/i)
@@ -25,6 +26,9 @@ export function middleware(request: NextRequest) {
     const pathnameIsMissingLocale = i18n.locales.every(
         locale => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
     )
+
+    console.log("pathnameIsMissingLocale ", pathnameIsMissingLocale);
+    console.log("pathname ", pathname);
 
     // Redirect if there is no locale
     if (pathnameIsMissingLocale) {

@@ -6,7 +6,6 @@ import { alegreyaFont, cinzelFont } from "@/app/[lang]/_components/constants";
 import TopNavBar from "@/app/[lang]/_components/TopNavBar";
 
 const Home = ({params} : {params: { lang: Language}}) => {
-    const lang = params.lang;
     return (
         <>
             <TopNavBar />
