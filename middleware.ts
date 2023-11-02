@@ -1,7 +1,7 @@
 import type {NextRequest} from 'next/server'
 import {NextResponse} from 'next/server'
 
-import {i18n} from '@/i18n.config'
+import {i18n, Locale} from '@/i18n.config'
 
 import {match as matchLocale} from '@formatjs/intl-localematcher'
 import Negotiator from "negotiator";
@@ -27,31 +27,21 @@ export function middleware(request: NextRequest) {
         locale => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
     )
 
-    // console.log("request.url ", request);
+    console.log("request.url ", request.url);
 
     // console.log("pathnameIsMissingLocale ", pathnameIsMissingLocale);
     // console.log("pathname ", pathname);
 
     // Redirect if there is no locale
     if (pathnameIsMissingLocale) {
-        const locale = getLocale(request);
-        if (locale === 'fr') {
-            console.log("redirecting " + pathname + " to " + `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`);
-            return NextResponse.redirect(
-                new URL(
-                    `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-                    request.url
-                )
+        const locale = getLocale(request) as Locale;
+        console.log("redirecting " + pathname + " to " + `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`);
+        return NextResponse.redirect(
+            new URL(
+                `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+                request.url
             )
-        } else {
-            //console.log("rewriting " + pathname + " to " + `/en${pathname.startsWith('/') ? '' : '/'}${pathname}`);
-            return NextResponse.redirect(
-                new URL(
-                    `/fr${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-                    request.url
-                )
-            )
-        }
+        )
     }
 }
 

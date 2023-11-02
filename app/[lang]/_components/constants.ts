@@ -28,7 +28,7 @@ const chomskyFont = LocalFont(
     },
 );
 
-export type Language = "en" | "fr";
+export type Language = "en-US" | "fr-FR";
 
 export interface LanguageProps {
     language: Language;

@@ -5,9 +5,9 @@ import getFR from "@/app/[lang]/_lib/dictionaries/fr";
 
 export const getDictionary = (locale: Locale) => {
     switch (locale) {
-        case 'en':
+        case 'en-US':
             return getEN();
-        case 'fr':
+        case 'fr-FR':
             return getFR();
 
         default:

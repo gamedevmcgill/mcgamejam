@@ -10,8 +10,8 @@ export default function Home({
 								 params
 							 }: {	params: { lang: Language }
 							 }) {
-	if (params.lang !== 'en' && params.lang !== 'fr') {
-		params.lang = 'en';
+	if (params.lang !== 'en-US' && params.lang !== 'fr-FR') {
+		params.lang = 'en-US';
 	}
 	return (
 		<div className="flex flex-col gt-lg:justify-center w-screen h-screen">
