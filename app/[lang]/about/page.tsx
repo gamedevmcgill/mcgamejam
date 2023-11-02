@@ -4,11 +4,14 @@ import { FloatingNavContent } from "@/app/[lang]/_components/FloatingNavContent"
 import {interFont, Language, ticketUrl} from "@/app/[lang]/_components/constants";
 import { alegreyaFont, cinzelFont } from "@/app/[lang]/_components/constants";
 import TopNavBar from "@/app/[lang]/_components/TopNavBar";
+import LanguageSwitchButton from "@/app/[lang]/_components/LanguageSwitchButton";
+import React from "react";
 
 const Home = ({params} : {params: { lang: Language}}) => {
     return (
         <>
             <TopNavBar />
+            <LanguageSwitchButton params={params} currentPath="/[lang]/about"/>
             <div className="container" style={{backgroundColor: "#ffecde"}}>
                 <div className={"py-11"} />
                 <div className={"grid grid-cols-12 gap-4"}>

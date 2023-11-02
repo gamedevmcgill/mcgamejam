@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import {FloatingNavCover} from "@/app/[lang]/_components/FloatingNavCover";
 import {Language} from "@/app/[lang]/_components/constants";
+import LanguageSwitchButton from "@/app/[lang]/_components/LanguageSwitchButton";
 
 export default function Home({
 								 params
@@ -22,6 +23,7 @@ export default function Home({
 				   className="w-full h-auto"/>
 
 			<FloatingNavCover params={params}/>
+			<LanguageSwitchButton params={params} currentPath="/[lang]"/>
 		</div>
 	);
 }
