@@ -9,9 +9,9 @@ const LanguageSwitchButton = ({ params: { lang }, currentPath } : { params: { la
     const flag = lang === "en-US" ? flagFrance : flagUS;
     const oppositeLang = lang === "en-US" ? "fr-FR" : "en-US";
     return (
-        <div className="lt-sm:hidden">
+        <div className="lt-md:hidden">
             <a
-                className="fixed bottom-6 left-8 h-16 w-16 rounded-full bg-white text-black flex items-center justify-center shadow-lg text-xl"
+                className="fixed bottom-6 left-8 h-16 w-16 rounded-full bg-white hover:bg-gray-50 text-black flex items-center justify-center shadow-lg text-xl"
                 href={currentPath.replace("[lang]", oppositeLang)}
             >
                 {flag}
