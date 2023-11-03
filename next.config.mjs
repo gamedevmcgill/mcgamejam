@@ -4,7 +4,7 @@
 const nextConfig = {
 	pageExtensions: ["js", "jsx", "ts", "tsx"],
 	images: {
-		unoptimized: true
+		unoptimized: false
 	},
 	i18n: {
 		locales: ["en", "fr"],

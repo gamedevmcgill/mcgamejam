@@ -20,8 +20,14 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
     //console.log("request.url ", request.url);
     const pathname = new URL(request.url).pathname ? new URL(request.url).pathname : `/${new URL(request.url).pathname}`;
+    if (pathname.startsWith("/_next")) return;
+    if (pathname.startsWith("/api")) return;
+    if (pathname.startsWith("/static")) return;
+    if (pathname.startsWith("/favicon")) return;
+    if (pathname.startsWith("/manifest")) return;
+    if (pathname.startsWith("/robots")) return;
     // check if the pathname is a resource file
-    const isResourceFile = pathname.match(/\.[0-9a-z]+$/i)
+    const isResourceFile = pathname.match(/\.[0-9a-z]+$/i);
     if (isResourceFile) return;
     const pathnameIsMissingLocale = i18n.locales.every(
         locale => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
@@ -56,6 +62,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        '/:path*'
+        '/:path*',
     ]
 }
