@@ -1,4 +1,3 @@
-'use client'
 
 import { FloatingNavContent } from "@/app/[lang]/_components/FloatingNavContent";
 import {interFont, Language, ticketUrl} from "@/app/[lang]/_components/constants";
