@@ -11,7 +11,10 @@ const nextConfig = {
 		defaultLocale: "en",
 		localeDetection: true,
 	},
-	trailingSlash: true
+	trailingSlash: true,
+	experimental: {
+		serverActions: true,
+	}
 };
 
 export default nextConfig;
