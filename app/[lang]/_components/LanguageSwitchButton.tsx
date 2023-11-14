@@ -16,7 +16,6 @@ const LanguageSwitchButton = ({ params: { lang }, currentPath } : { params: { la
     };
 
     const flag = lang === "en-US" ? flagFrance : flagUS;
-    const oppositeLang = lang === "en-US" ? "fr-FR" : "en-US";
     return (
         <form className="lt-md:hidden" action={languageSwitchHandler.bind(null, currentPath, lang)}>
             <button

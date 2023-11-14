@@ -77,9 +77,16 @@ const Home = ({params} : {params: { lang: Language}}) => {
                                 {how_should_i_prepare}
                             </div>
                             {how_should_i_prepare_response}
-                            <div className="text-5xl">
-                                ADD ICONS
-                            </div>
+                            <ul className={"list-disc gt-md:list-inside"}>
+                                <li>Unity</li>
+                                <li>Unreal Engine</li>
+                                <li>Godot</li>
+                                <li>C#</li>
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>Typescript</li>
+                                <li>Javascript</li>
+                            </ul>
                             <br />
                             <br />
                             <div className={"text-2xl"}>{will_there_be_food}</div>
